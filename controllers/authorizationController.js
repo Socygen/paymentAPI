@@ -3,9 +3,15 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 exports.userSignup = async (req, res) => {
-    const { mobile, emailId, memberId, joinerId, joinerName, type, package, firstName, middleName, lastName, dob, block, mohalla, shopName, idProof, addressProof, shopPhoto, shopType,
+    const {
+        mobile, emailId, memberId, joinerId, joinerName, type, package, firstName, middleName, lastName, dob, block, mohalla, shopName, idProof, addressProof, shopPhoto, shopType,
         qualification, population, locationType, location, landLine, aepsStatus, country, state, district, city, landmark, pincode, address, aadharnumber, pannumber, password, permission,
-        aadharImage, pancardImage, passbookImage, userPhoto, formImage, status, narration, userCode } = req.body;
+        aadharImage, pancardImage, passbookImage, userPhoto, formImage, status, narration, userCode
+    } = req.body;
+
+    if (!password) {
+        return res.status(400).json({ status: false, error: "Password is required" });
+    }
 
     try {
         let existingMobile = await Member.findOne({ mobile });
@@ -24,8 +30,9 @@ exports.userSignup = async (req, res) => {
                 status: true
             });
         } else {
-            const salt = await bcrypt.genSalt();
+            const salt = await bcrypt.genSalt(10);
             const passwordHash = await bcrypt.hash(password, salt);
+
             let newUser = await Member.create({
                 mobile,
                 emailId,
@@ -83,7 +90,7 @@ exports.userSignup = async (req, res) => {
     } catch (error) {
         res.status(500).json({ status: false, error: error.message });
     }
-}
+};
 
 exports.userLogin = async (req, res) => {
     const { mobile, password } = req.body;
