@@ -1,4 +1,4 @@
-const Balanceledger = require('../models/balanceledgerModel');
+const Balanceledger = require('../models/balanceLedgerModel');
 
 exports.createBalanceledger = async (req, res) => {
     try {
