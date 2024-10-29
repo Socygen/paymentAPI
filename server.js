@@ -11,6 +11,9 @@ app.use(express.json());
 
 app.use('/api/v1/', globalRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Hello, AsheServices API Version 1.0.0 Is Live And Running');
+});
 
 mongoose.connect(process.env.MONGODB)
     .then(() => console.log('Successfully Connected To DataBase ...'))
