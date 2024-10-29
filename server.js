@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use('/api/v1/', globalRoutes);
 
+
 mongoose.connect(process.env.MONGODB)
     .then(() => console.log('Successfully Connected To DataBase ...'))
     .catch((error) => console.error('DataBase Connection Failed ...', error));
