@@ -7,7 +7,7 @@ const globalRoutes = require('./routes/globalRoutes');
 const app = express();
 
 app.use(cors({
-    origin: '*', // Allow all origins
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'] 
 }));
