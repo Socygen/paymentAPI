@@ -6,9 +6,13 @@ const cors = require('cors');
 const globalRoutes = require('./routes/globalRoutes');
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+    origin: '*', // Allow all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'] 
+}));
 
+app.use(express.json());
 app.use('/api/v1/', globalRoutes);
 
 app.get('/', (req, res) => {
