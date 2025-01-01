@@ -10,4 +10,3 @@ const aepswalletSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Aepswallet = mongoose.model('Aepswallet', aepswalletSchema);
-module.exports = Aepswallet;
