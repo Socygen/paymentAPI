@@ -13,4 +13,3 @@ const IdRequestSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('IdRequest', IdRequestSchema);
-module.exports = IdRequestSchema;
