@@ -7,4 +7,3 @@ const NewsEventSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('NewsEvent', NewsEventSchema);
-module.exports = NewsEventSchema;
