@@ -6,4 +6,5 @@ const MessageSettingSchema = new mongoose.Schema({
     message : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('MessageSetting', MessageSettingSchema);
+const MessageSetting = mongoose.model('MessageSetting', MessageSettingSchema);
+module.exports = MessageSetting;
