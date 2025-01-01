@@ -9,3 +9,4 @@ const contactusSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const ContactUs = mongoose.model('ContactUs', contactusSchema);
+module.exports = ContactUs;
