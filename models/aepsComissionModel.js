@@ -11,3 +11,4 @@ const aepscomissionSchema = new mongoose.Schema({
 
 const Aepscomission = mongoose.model('Aepscomission', aepscomissionSchema);
 
+module.exports = Aepscomission;
