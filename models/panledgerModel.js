@@ -8,4 +8,3 @@ const PanLedgerSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('PanLedger', PanLedgerSchema);
-module.exports = PanLedgerSchema;
