@@ -7,4 +7,3 @@ const WalletPinSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('WalletPin', WalletPinSchema);
-module.exports = WalletPinSchema;
