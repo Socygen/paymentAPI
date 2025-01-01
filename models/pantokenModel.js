@@ -7,4 +7,6 @@ const PanTokenSchema = new mongoose.Schema({
     type : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('PanToken', PanTokenSchema);
+const PanToken = mongoose.model('PanToken', PanTokenSchema);
+module.exports = PanToken;
+
