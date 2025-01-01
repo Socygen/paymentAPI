@@ -8,4 +8,3 @@ const PayoutSurchargeSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('PayoutSurcharge', PayoutSurchargeSchema);
-module.exports = PayoutSurchargeSchema;
