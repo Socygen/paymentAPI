@@ -7,4 +7,6 @@ const PayoutSurchargeSchema = new mongoose.Schema({
     Flat : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('PayoutSurcharge', PayoutSurchargeSchema);
+const PayoutSurcharge = mongoose.model('PanToken', PayoutSurchargeSchema);
+module.exports = PayoutSurcharge;
+
