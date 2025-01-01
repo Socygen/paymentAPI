@@ -32,4 +32,3 @@ const ItrSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('Itr', ItrSchema);
-module.exports = ItrSchema;
