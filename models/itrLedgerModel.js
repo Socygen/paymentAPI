@@ -14,5 +14,5 @@ const ItrLedgerSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const ItrLedger = mongoose.model('ItrLedger', ItrLedgerSchema);
-module.exports = { ItrLedger, ItrLedgerSchema };
+module.exports = ItrLedger;
 
