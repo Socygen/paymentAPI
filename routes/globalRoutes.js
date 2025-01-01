@@ -287,47 +287,5 @@ router.post('/getWalletpinById', verifyToken, walletPinController.getWalletpinBy
 router.post('/updateWalletpin', verifyToken, walletPinController.updateWalletpin);
 router.post('/deleteWalletpin', verifyToken, walletPinController.deleteWalletpin);
 
-
-// Check if all controllers are defined
-const controllers = {
-    documentController,
-    authorizationController,
-    memberController,
-    aepscomissionController,
-    aepswalletController,
-    balanceController,
-    bankController,
-    bankSettingController,
-    companyController,
-    contactusController,
-    districtController,
-    dmrsController,
-    employeeController,
-    epfoController,
-    epfoledgerController,
-    exceptionController,
-    fundrequestController,
-    galleryController,
-    gstledgerController,
-    gstregistrationController,
-    idMasterController,
-    idRequestController,
-    itrController,
-    itrLedgerController,
-    loginHistoryController,
-    mainWalletLedgerController,
-    messageSettingController,
-    newsEventController,
-    orderController,
-    panLedgerController,
-    panTokenController,
-    payoutSurchargeController,
-    productController,
-    selfBankController,
-    serviceController,
-    stateController,
-    ticketController,
-    walletPinController
-};
 module.exports = router;
 
