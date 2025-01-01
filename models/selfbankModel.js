@@ -9,4 +9,5 @@ const SelfBankSchema = new mongoose.Schema({
     ifsc : String,
 },{timestamps : true});
 
-module.exports = mongoose.model('SelfBank', SelfBankSchema);
+const SelfBank = mongoose.model('SelfBank', SelfBankSchema);
+module.exports = SelfBank;
