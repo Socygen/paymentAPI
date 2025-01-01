@@ -8,4 +8,3 @@ const PanTokenSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('PanToken', PanTokenSchema);
-module.exports = PanTokenSchema;
