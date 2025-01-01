@@ -8,4 +8,5 @@ const MainWalletLedgerSchema = new mongoose.Schema({
     narration : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('MainWalletLedger', MainWalletLedgerSchema);
+const MainWalletLedger = mongoose.model('MainWalletLedger', MainWalletLedgerSchema);
+module.exports = MainWalletLedger;
