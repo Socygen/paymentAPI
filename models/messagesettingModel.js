@@ -7,4 +7,3 @@ const MessageSettingSchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('MessageSetting', MessageSettingSchema);
-module.exports = MessageSettingSchema;
