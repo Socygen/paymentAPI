@@ -6,4 +6,5 @@ const IdMasterSchema = new mongoose.Schema({
     status : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('IdMaster', IdMasterSchema);
+const IdMaster = mongoose.model('IdMaster', IdMasterSchema);
+module.exports = IdMaster;
