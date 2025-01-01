@@ -31,4 +31,5 @@ const ItrSchema = new mongoose.Schema({
     status : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('Itr', ItrSchema);
+const Itr = mongoose.model('Itr', ItrSchema);
+module.exports = Itr;
