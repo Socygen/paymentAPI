@@ -7,4 +7,5 @@ const PanLedgerSchema = new mongoose.Schema({
     narration : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('PanLedger', PanLedgerSchema);
+const PanLedger = mongoose.model('PanLedger', PanLedgerSchema);
+module.exports = PanLedger;
