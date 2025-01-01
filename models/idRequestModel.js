@@ -12,4 +12,5 @@ const IdRequestSchema = new mongoose.Schema({
     status : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('IdRequest', IdRequestSchema);
+const IdRequest = mongoose.model('IdRequest', IdRequestSchema);
+module.exports = IdRequest;
