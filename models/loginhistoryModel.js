@@ -9,4 +9,3 @@ const LoginHistorySchema = new mongoose.Schema({
 }, {timestamps : true});
 
 module.exports = mongoose.model('LoginHistory', LoginHistorySchema);
-module.exports = LoginHistorySchema;
