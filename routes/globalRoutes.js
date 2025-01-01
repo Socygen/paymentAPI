@@ -329,12 +329,5 @@ const controllers = {
     ticketController,
     walletPinController
 };
-
-for (const [name, controller] of Object.entries(controllers)) {
-    if (!controller) {
-        console.error(`Controller ${name} is undefined`);
-    }
-}
-
 module.exports = router;
 
