@@ -10,4 +10,6 @@ const TicketSchema = new mongoose.Schema({
     status : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('Ticket', TicketSchema);
+const Ticket = mongoose.model('Ticket', TicketSchema);
+module.exports = Ticket;
+
