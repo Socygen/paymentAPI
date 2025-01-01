@@ -6,4 +6,5 @@ const NewsEventSchema = new mongoose.Schema({
     status : String,
 }, {timestamps : true});
 
-module.exports = mongoose.model('NewsEvent', NewsEventSchema);
+const NewsEvent = mongoose.model('NewsEvent', NewsEventSchema);
+module.exports = NewsEvent;
