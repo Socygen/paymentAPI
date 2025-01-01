@@ -10,4 +10,3 @@ const SelfBankSchema = new mongoose.Schema({
 },{timestamps : true});
 
 module.exports = mongoose.model('SelfBank', SelfBankSchema);
-module.exports = SelfBankSchema;
