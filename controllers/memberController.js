@@ -1,4 +1,6 @@
 const Member = require('../models/memberModel');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 exports.createMember = async (req, res) => {
     const {
