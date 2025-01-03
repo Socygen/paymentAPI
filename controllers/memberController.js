@@ -1,21 +1,94 @@
 const Member = require('../models/memberModel');
 
-// Create a new member
 exports.createMember = async (req, res) => {
+    const {
+        mobile, emailId, memberId, joinerId, joinerName, type, package, firstName, middleName, lastName, dob, block, mohalla, shopName, idProof, addressProof, shopPhoto, shopType,
+        qualification, population, locationType, location, landLine, aepsStatus, country, state, district, city, landmark, pincode, address, aadharnumber, pannumber, password, permission,
+        aadharImage, pancardImage, passbookImage, userPhoto, formImage, status, narration, userCode
+    } = req.body;
+
+    if (!password) {
+        return res.status(400).json({ status: false, error: "Password is required" });
+    }
+
     try {
-        const newMember = new Member(req.body);
-        const savedMember = await newMember.save();
-        return res.status(201).json({
-            data: savedMember,
-            message: "Member Created Successfully",
-            status: true
-        });
+        let existingMobile = await Member.findOne({ mobile });
+        let existingEmail = await Member.findOne({ emailId });
+
+        if (existingMobile) {
+            return res.status(400).json({
+                data: existingMobile,
+                message: "This Mobile Number Is Already Registered",
+                status: true
+            });
+        } else if (existingEmail) {
+            return res.status(400).json({
+                data: existingEmail,
+                message: "This Email Is Already Registered",
+                status: true
+            });
+        } else {
+            const salt = await bcrypt.genSalt(10);
+            const passwordHash = await bcrypt.hash(password, salt);
+
+            const newMember = new Member({
+                mobile,
+                emailId,
+                memberId,
+                joinerId,
+                joinerName,
+                type,
+                package,
+                firstName,
+                middleName,
+                lastName,
+                dob,
+                block,
+                mohalla,
+                shopName,
+                idProof,
+                addressProof,
+                shopPhoto,
+                shopType,
+                qualification,
+                population,
+                locationType,
+                location,
+                landLine,
+                aepsStatus,
+                country,
+                state,
+                district,
+                city,
+                landmark,
+                pincode,
+                address,
+                aadharnumber,
+                pannumber,
+                password: passwordHash,
+                permission,
+                aadharImage,
+                pancardImage,
+                passbookImage,
+                userPhoto,
+                formImage,
+                status,
+                narration,
+                userCode
+            });
+
+            const savedMember = await newMember.save();
+            return res.status(201).json({
+                data: savedMember,
+                message: "Member Created Successfully",
+                status: true
+            });
+        }
     } catch (error) {
         res.status(500).json({ status: false, error: error.message });
     }
 };
 
-// Get all members
 exports.getMembers = async (req, res) => {
     try {
         const members = await Member.find();
@@ -29,7 +102,6 @@ exports.getMembers = async (req, res) => {
     }
 };
 
-// Get member by ID
 exports.getMemberById = async (req, res) => {
     try {
         const member = await Member.findById(req.query.id);
@@ -50,7 +122,6 @@ exports.getMemberById = async (req, res) => {
     }
 };
 
-// Update member by ID
 exports.updateMember = async (req, res) => {
     try {
         const updatedMember = await Member.findByIdAndUpdate(req.query.id, req.body, { new: true });
@@ -70,7 +141,6 @@ exports.updateMember = async (req, res) => {
     }
 };
 
-// Delete member by ID
 exports.deleteMember = async (req, res) => {
     try {
         const deletedMember = await Member.findByIdAndDelete(req.query.id);
@@ -90,7 +160,6 @@ exports.deleteMember = async (req, res) => {
     }
 };
 
-// Get unique member ID
 exports.getMemberuniqueId = async (req, res) => {
     try {
         const membersCount = await Member.countDocuments() + 1;
